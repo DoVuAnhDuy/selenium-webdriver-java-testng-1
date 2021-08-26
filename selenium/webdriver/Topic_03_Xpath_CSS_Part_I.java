@@ -39,7 +39,8 @@ public class Topic_03_Xpath_CSS_Part_I {
 	
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", ".\\browserDrivers\\chromedriver.exe");
+		String filePath = System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", filePath + "/browserDrivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

@@ -36,7 +36,8 @@ public class Topic_05_Web_Element_Command_Part_I {
 
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.gecko.driver", ".\\browserDrivers\\geckodriver.exe");
+		String filePath = System.getProperty("user.dir");
+		System.setProperty("webdriver.gecko.driver", filePath + "/browserDrivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

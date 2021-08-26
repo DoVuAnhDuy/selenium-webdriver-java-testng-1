@@ -58,7 +58,8 @@ public class Topic_03_Xpath_CSS_Part_II {
 
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.gecko.driver", ".\\browserDrivers\\geckodriver.exe");
+		String filePath = System.getProperty("user.dir");;
+		System.setProperty("webdriver.gecko.driver", filePath + "/browserDrivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
